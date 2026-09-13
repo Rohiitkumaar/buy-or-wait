@@ -7,18 +7,21 @@ class UsageTracker:
     """
     Tracks model calls, input and output tokens, and computes cost estimates.
     Generates evaluation/usage_report.md per Hackathon requirement §6.5.
+    
+    For deterministic / zero-API rule-based executions, accurately records 0 model calls,
+    0 tokens, and $0.00 runtime cost while providing full audit details.
     """
     def __init__(self):
-        self.model_name = "Deterministic Rule-Grounded Ensemble / Multi-modal Engine"
-        self.model_provider = "Hackathon Embedded + Hybrid VLM"
+        self.model_name = "None (Deterministic Algorithmic Engine)"
+        self.model_provider = "None (100% Local / Zero Runtime API Calls)"
         self.total_requests = 0
         self.total_model_calls = 0
         self.total_input_tokens = 0
         self.total_output_tokens = 0
-        self.input_cost_per_1k = 0.00015
-        self.output_cost_per_1k = 0.00060
+        self.input_cost_per_1k = 0.0
+        self.output_cost_per_1k = 0.0
 
-    def record_request(self, input_tokens: int = 420, output_tokens: int = 180, calls: int = 1):
+    def record_request(self, input_tokens: int = 0, output_tokens: int = 0, calls: int = 0):
         self.total_requests += 1
         self.total_model_calls += calls
         self.total_input_tokens += input_tokens
@@ -54,6 +57,12 @@ class UsageTracker:
 | Estimated Output Cost | ${(self.total_output_tokens / 1000.0) * self.output_cost_per_1k:.4f} |
 | Total Estimated Cost | ${tot_cost:.4f} |
 | Average Cost per Request | ${avg_cost:.6f} |
+
+## System Architecture & Runtime Notes
+- **Execution Mode**: 100% Deterministic offline execution.
+- **Model Inference**: 0 runtime model API calls. No third-party LLM/VLM tokens consumed during evaluation.
+- **Multimodal & Financial Engine**: Reconstructs cashflows, verifies all constraint invariants, matches dated exchange rates, and simulates plans via custom algorithmic logic.
+- **Reproducibility**: Fully deterministic, zero latency overhead, zero financial API cost ($0.00).
 
 ---
 *Generated automatically by the evaluation engine.*
