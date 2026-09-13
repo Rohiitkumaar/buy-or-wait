@@ -1,0 +1,85 @@
+# ==========================================
+# Git Ignore for Buy or Wait (HackerRank)
+# ==========================================
+
+# --- Challenge & Agent Log Files (Strictly Ignored) ---
+log.txt
+*.log
+
+# --- Environment & Secret Variables ---
+.env
+.env.local
+.env.*.local
+*.env
+
+# --- Python Cache & Bytecode ---
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# --- Virtual Environments ---
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# --- Heavy Files, Archives & Binary Bundles ---
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+*.rar
+*.7z
+*.iso
+*.bin
+*.exe
+*.dll
+*.so
+*.dylib
+
+# --- Model & Large Data Weights / Checkpoints ---
+*.pt
+*.pth
+*.bin
+*.onnx
+*.safetensors
+*.ckpt
+*.h5
+*.pkl
+*.pickle
+*.parquet
+*.feather
+
+# --- Large Video / Audio Media (Keeps dataset images safe) ---
+*.mp4
+*.mkv
+*.mov
+*.avi
+*.wmv
+*.mp3
+*.wav
+*.flac
+
+# --- Build & Distribution Artifacts ---
+build/
+dist/
+*.egg-info/
+__pypackages__/
+
+# --- IDE & Editor Specific Files ---
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
